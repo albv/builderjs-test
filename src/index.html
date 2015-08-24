@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>SystemJS builder test</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+  </head>
+  <body>
+    <div ng-controller="MainController as main">
+      {{ main.greeting }}    
+    </div>
+    
+
+    <script src="lib/system.js/dist/system.src.js"></script>
+    <script src="system-config.js"></script>
+    <script>
+      System.import('app/index');
+    </script>
+  </body>
+</html>
