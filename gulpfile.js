@@ -78,11 +78,12 @@ gulp.task('scripts', function (done) {
 gulp.task('scripts:bundle', ['scripts'], function (done) {
     var builder = new Builder();
     var builderConfig = {
-        defaultJSExtensions: true, // defaultExtension in 'app' package doesn't work for me in SystemJS 0.18.4
+        map: {
+            'app': path.join(conf.paths.tmp, '/serve/app')    
+        },
         paths: {
             'lib/*': path.join(conf.paths.src, '/lib/*'),
-            'common/*': path.join(conf.paths.src, '/common/*'),
-            'app': path.join(conf.paths.tmp, '/serve/app')
+            'common/*': path.join(conf.paths.src, '/common/*')
         },
         packages: {
             'app': {

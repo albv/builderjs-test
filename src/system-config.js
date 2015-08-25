@@ -5,11 +5,12 @@ System.config({
         'angular-resource': 'lib/angular-resource/angular-resource.js',
 
         'resource-factory': 'common/resource-factory.js',
+
+        'app': 'app'
     },
     paths: {
         'lib/*': 'lib/*',
-        'common/*': 'common/*',
-        'app': 'app'
+        'common/*': 'common/*'
     },
     meta: {
         'lib/angular/angular.js': {format: 'global', exports: 'angular'},
