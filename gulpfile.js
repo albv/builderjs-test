@@ -77,26 +77,22 @@ gulp.task('scripts', function (done) {
 
 gulp.task('scripts:bundle', ['scripts'], function (done) {
     var builder = new Builder();
-    var builderConfig = {
-        map: {
-            'app': path.join(conf.paths.tmp, '/serve/app')    
-        },
+    builder.config({
+        baseURL: conf.paths.src,
         paths: {
-            'lib/*': path.join(conf.paths.src, '/lib/*'),
-            'common/*': path.join(conf.paths.src, '/common/*')
+            'app/*': path.join(conf.paths.tmp, '/serve/app/*')
         },
         packages: {
             'app': {
                 defaultExtension: 'js'
             }
-        }
-    };
+        }        
+    });
     var expression = path.join(conf.paths.tmp, '/serve/app/**/*');
     var outputFile = path.join(conf.paths.tmp, '/bundles/app.js');
 
     builder.loadConfig(path.join(conf.paths.src, '/system-config.js'))
         .then(function () {
-            builder.config(builderConfig);
             builder.buildSFX(expression, outputFile)
                 .then(function () {
                     return done();
