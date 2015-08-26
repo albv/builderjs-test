@@ -1,16 +1,9 @@
 System.config({
-    baseURL: '',
     map: {
         'angular': 'lib/angular/angular.js',
         'angular-resource': 'lib/angular-resource/angular-resource.js',
 
-        'resource-factory': 'common/resource-factory.js',
-
-        'app': 'app'
-    },
-    paths: {
-        'lib/*': 'lib/*',
-        'common/*': 'common/*'
+        'resource-factory': 'common/resource-factory.js'
     },
     meta: {
         'lib/angular/angular.js': {format: 'global', exports: 'angular'},
